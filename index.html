@@ -13,8 +13,20 @@
   <body>
     <div>hello</div>
     <button class="play-chords">Play</button>
-    <button class="chord-key">Key</button>
-    <button class="chord-type">Maj/Min</button>
+    <button class="enter-chord">Enter</button>
+
+    <label for="chord-key">Key</label>
+    <select name="chord-key" id="chord-key"></select>
+
+    <label for="chord-type" class="chord-type">
+      <input type="radio" name="chordType" id="chord-type-maj" class="chord-type_maj" checked="checked">
+      <label for="chord-type-maj">Maj</label>
+      <input type="radio" name="chordType" id="chord-type-min" class="chord-type_min">
+      <label for="chord-type-min">Min</label>
+    </label> <br>
+
+    <label for="7th">7th:</label>
+    <input type="checkbox" id="7th" value="7th"/>
   </body>
 
 </html>
