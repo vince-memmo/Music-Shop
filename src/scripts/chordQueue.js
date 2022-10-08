@@ -11,8 +11,8 @@ class ChordQueue {
     }
 
     queueChord() {
-        let chordArray = this.chord.setUpChordArray()
-        this.queue.push(chordArray)
+        let chordHash = this.chord.setUpchordHash()
+        this.queue.push(chordHash)
     }
     
     getQueue() {
@@ -21,4 +21,3 @@ class ChordQueue {
 }
 
 export default ChordQueue
-//ChordQueue.queueChord()

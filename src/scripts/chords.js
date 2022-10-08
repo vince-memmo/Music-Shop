@@ -6,7 +6,7 @@ const chordNotes = ['C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A
 
 class Chord {
     constructor () {
-        this.setUpChordArray = this.setUpChordArray.bind(this)
+        this.setUpchordHash = this.setUpchordHash.bind(this)
         this.setupNotesSelection = this.setupNotesSelection.bind(this)
     }
     
@@ -19,8 +19,11 @@ class Chord {
         });
     }
 
-    setUpChordArray() {
+    setUpchordHash() {
         console.log('play music worked')
+        let durationEl= document.getElementById('chord-duration').value
+        const duration = parseInt(durationEl)
+
         let startNote = document.getElementById('chord-key').value + '4'
         const startNoteIdx = chordNotes.indexOf(startNote)
         const root = chordNotes[startNoteIdx]
@@ -28,23 +31,21 @@ class Chord {
         const minorThird = chordNotes[(startNoteIdx+3) % 12]
         const fifth = chordNotes[(startNoteIdx+7) % 12]
         const seventh = chordNotes[(startNoteIdx+10) % 12]
-        let chordArray = []
+        let chordHash = {}
+        chordHash['duration'] = duration
+        chordHash['chordArray'] = []
+
         
         if (document.getElementById('chord-type-maj').checked && document.getElementById('7th').checked) {
-            chordArray = [root, third, fifth, seventh]
+            chordHash['chordArray'].push([root, third, fifth, seventh])
         } else if (document.getElementById('chord-type-min').checked && document.getElementById('7th').checked) {
-            chordArray = [root, minorThird, fifth, seventh]
+            chordHash['chordArray'].push([root, minorThird, fifth, seventh])
         } else if (document.getElementById('chord-type-maj').checked) {
-            chordArray = [root, third, fifth]
+            chordHash['chordArray'].push([root, third, fifth])
         } else {
-            chordArray = [root, minorThird, fifth]
+            chordHash['chordArray'].push([root, minorThird, fifth])
         }
-        
-        // const now = Tone.now()
-        // const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-        // synth.triggerAttack(chordArray, now); //play sound
-        // synth.triggerRelease(chordArray, now + 1); //end sound
-        return chordArray
+        return chordHash
     }
 }
 
