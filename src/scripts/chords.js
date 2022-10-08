@@ -6,14 +6,11 @@ const chordNotes = ['C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A
 
 class Chord {
     constructor () {
-        this.playChords = document.querySelector('.play-chords')
-        this.playMusic = this.playMusic.bind(this)
+        this.setUpChordArray = this.setUpChordArray.bind(this)
         this.setupNotesSelection = this.setupNotesSelection.bind(this)
-        this.playChords.addEventListener("click", this.playMusic)
     }
     
     setupNotesSelection() {
-        debugger
         selectionNotes.forEach(noteName => {
             let noteNameOption = document.createElement('option', noteName);
             let noteSelector = document.getElementById('chord-key')
@@ -22,12 +19,10 @@ class Chord {
         });
     }
 
-    playMusic() {
+    setUpChordArray() {
         console.log('play music worked')
-        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
         let startNote = document.getElementById('chord-key').value + '4'
         const startNoteIdx = chordNotes.indexOf(startNote)
-        const now = Tone.now()
         const root = chordNotes[startNoteIdx]
         const third = chordNotes[(startNoteIdx+4) % 12]
         const minorThird = chordNotes[(startNoteIdx+3) % 12]
@@ -44,9 +39,12 @@ class Chord {
         } else {
             chordArray = [root, minorThird, fifth]
         }
-
-        synth.triggerAttack(chordArray, now);
-        synth.triggerRelease(chordArray, now + 1);
+        
+        // const now = Tone.now()
+        // const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+        // synth.triggerAttack(chordArray, now); //play sound
+        // synth.triggerRelease(chordArray, now + 1); //end sound
+        return chordArray
     }
 }
 
