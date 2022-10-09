@@ -50,11 +50,3 @@ class Chord {
 }
 
 export default Chord
-
-
-
-
-
-
-// let audio = new Audio("4_count_patt_002.mp3")
-// audio.play()

@@ -12,8 +12,10 @@
   </head>
 
   <body>
-    <div>hello</div>
     <button class="play">Play</button>
+    <br>
+    <h5>Chords</h5>
+    <button class="play-chords">Play Chords</button>
     <button class="enter-chord">Enter</button>
 
     <label for="chord-key">Key</label>
@@ -31,12 +33,23 @@
 
     <label for="7th">7th:</label>
     <input type="checkbox" id="7th" value="7th"/>
+    <br>
+    <br>
 
     <div class="drums">
       <button class="add-measure">Add measure</button>
-      <button class="setup-kick">Set Up Kick</button>
 
+      <h5>Kick</h5>
+      <button class="play-kick">Play Kick</button>
       <div class="kick-measures"></div>
+
+      <h5>Snare</h5>
+      <button class="play-snare">Play Snare</button>
+      <div class="snare-measures"></div>
+
+      <h5>Hi-Hats</h5>
+      <button class="play-hihat">Play Hi-Hats</button>
+      <div class="hihat-measures"></div>
     </div>
   </body>
 
