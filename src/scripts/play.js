@@ -1,20 +1,26 @@
 import * as Tone from 'tone'
-import ChordQueue from './chordQueue'
+import { Player } from 'tone'
+import Kick from './kick'
 
 class Play {
     constructor(chordQueue) {
-        this.playChords = this.playChords.bind(this)
+        this.play = this.play.bind(this)
         this.chordQueue = chordQueue
         this.sleep = this.sleep.bind(this)
+        
+        this.kick = new Kick()
+        
         this.playSong = document.querySelector('.play')
-        this.playSong.addEventListener("click", this.playChords)
+        this.playSong.addEventListener("click", this.play)
     }
-
+    
     async sleep(milliseconds){
         return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
     
-    async playChords() { 
+    async play() { 
+        const kickArray = this.kick.setUpKickArray()
+        
         for (let i = 0; i < this.chordQueue.length; i++){
             console.log(`play ${this.chordQueue[i]}`)
             const synth = new Tone.PolySynth(Tone.Synth).toDestination();
@@ -26,6 +32,13 @@ class Play {
             await this.sleep(duration*1000);
         }
     }
+    
 }
 
 export default Play
+
+
+// const kickHit = new Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination();
+// Tone.loaded().then(() => {
+//     kickHit.start();
+// });
