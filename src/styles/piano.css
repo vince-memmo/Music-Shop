@@ -4,6 +4,7 @@
     background-color: aqua;
     border-radius: 20px;
     display: flex;
+    justify-content: center;
 }
 
 .white-keys {
