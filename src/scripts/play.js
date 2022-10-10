@@ -18,9 +18,6 @@ class Play {
         
         this.playSong = document.querySelector('.play-chords')
         this.playSong.addEventListener("click", this.playChords)
-
-        this.playSong = document.querySelector('.play-kick')
-        this.playSong.addEventListener("click", this.playKick)
     }
     
     async sleep(milliseconds){
@@ -47,20 +44,34 @@ class Play {
     
     async playDrums() {  
         let drumsHash = this.drums.setUpDrums()
-        debugger
+        
         const kickHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination();
-        const snareHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination();
-        const hihateHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination();
+        const snareHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/snare.mp3").toDestination();
+        const hihateHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/hihat.mp3").toDestination();
 
-        for(let i = 0; i < kickArray.length; i++) {
-            if (kickArray[i] === 'hit'){
+
+        for(let i = 0; i < drumsHash['kick'].length; i++) {
+            if (drumsHash['kick'][i] === 'hit'){
                 Tone.loaded().then(() => {
                     kickHit.start();
                 });
             }
+
+            if (drumsHash['snare'][i] === 'hit'){
+                Tone.loaded().then(() => {
+                    snareHit.start();
+                });
+            }
+
+            if (drumsHash['hihat'][i] === 'hit'){
+                Tone.loaded().then(() => {
+                    hihateHit.start();
+                });
+            }
+
             await this.sleep(500);
         }
-        kickArray = []
+        drumsHash = {}
     }
 
 }
