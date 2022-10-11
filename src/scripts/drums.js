@@ -7,7 +7,6 @@ class Drums {
     this.setUpKickArray = this.setUpKickArray.bind(this)
     this.setUpSnareArray = this.setUpSnareArray.bind(this)
     this.setUpHihatArray = this.setUpHihatArray.bind(this)
-
     
     this.kickArray = []
     this.snareArray = []
@@ -16,6 +15,7 @@ class Drums {
 
     
     setUpKickArray() {
+        this.kickArray = []
         const kicks = document.querySelectorAll("div.kick-measures > input")
         kicks.forEach (kick =>{
             if (kick.checked === true){ 
@@ -28,6 +28,7 @@ class Drums {
     }
     
     setUpSnareArray() {
+        this.snareArray = []
         const snare = document.querySelectorAll("div.snare-measures > input")
         snare.forEach (snare =>{
             if (snare.checked === true){ 
@@ -40,6 +41,7 @@ class Drums {
     }
     
     setUpHihatArray() {
+        this.hihatArray = []
         const hihats = document.querySelectorAll("div.hihat-measures > input")
         hihats.forEach (hihat =>{
             if (hihat.checked === true){ 
@@ -51,7 +53,7 @@ class Drums {
         return this.hihatArray 
     }
 
-    setUpDrums() {
+    setUpDrumsHash() {
         const kickArray = this.setUpKickArray()
         const snareArray = this.setUpSnareArray()
         const hihatArray= this.setUpHihatArray()

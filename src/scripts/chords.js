@@ -6,7 +6,7 @@ const chordNotes = ['C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A
 
 class Chord {
     constructor () {
-        this.setUpchordHash = this.setUpchordHash.bind(this)
+        this.setUpChordArray = this.setUpChordArray.bind(this)
         this.setupNotesSelection = this.setupNotesSelection.bind(this)
     }
     
@@ -19,7 +19,7 @@ class Chord {
         });
     }
 
-    setUpchordHash() {
+    setUpChordArray() {
         console.log('play music worked')
         let durationEl= document.getElementById('chord-duration').value
         const duration = parseInt(durationEl)
@@ -31,21 +31,22 @@ class Chord {
         const minorThird = chordNotes[(startNoteIdx+3) % 12]
         const fifth = chordNotes[(startNoteIdx+7) % 12]
         const seventh = chordNotes[(startNoteIdx+10) % 12]
-        let chordHash = {}
-        chordHash['duration'] = duration
-        chordHash['chordArray'] = []
+        let chordArray = []
 
+        for (let i = 0; i < duration-1; i++) {
+            chordArray.push('rest')
+        }
         
         if (document.getElementById('chord-type-maj').checked && document.getElementById('7th').checked) {
-            chordHash['chordArray'].push([root, third, fifth, seventh])
+            chordArray.unshift([root, third, fifth, seventh, duration])
         } else if (document.getElementById('chord-type-min').checked && document.getElementById('7th').checked) {
-            chordHash['chordArray'].push([root, minorThird, fifth, seventh])
+            chordArray.unshift([root, minorThird, fifth, seventh, duration])
         } else if (document.getElementById('chord-type-maj').checked) {
-            chordHash['chordArray'].push([root, third, fifth])
+            chordArray.unshift([root, third, fifth, duration])
         } else {
-            chordHash['chordArray'].push([root, minorThird, fifth])
+            chordArray.unshift([root, minorThird, fifth, duration])
         }
-        return chordHash
+        return chordArray
     }
 }
 

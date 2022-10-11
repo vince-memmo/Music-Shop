@@ -11,15 +11,22 @@
     <link rel="stylesheet" href="/src/styles/piano.css">
     <link rel="stylesheet" href="src/styles/chords.css">
     <link rel="stylesheet" href="src/styles/drums.css">
+    <link rel="stylesheet" href="src/index.scss">
 
     <title>Music Shop</title>
   </head>
 
   <body>
+    <button class="start-music">Start Music</button>
+    <div class="start-screen">
+      <h1 class="start">Music Shop</h1>
+      <h2>Instructions</h2>
+    </div>
+
+
     <h1 class="title">Music Shop</h1>
 
     <div class="chords">
-      <button class="loop-chords">Loop Chords</button>
       <button class="enter-chord">Enter</button>
       <label for="chord-key" class="chord-key-label">Key</label>
       <select name="chord-key" id="chord-key"></select>
@@ -37,10 +44,11 @@
         <label for="7th">7th:</label>
         <input type="checkbox" id="7th" value="7th"/>
       </div>
+
     </div>
 
     <div class="drums">
-      <button class="loop-drums">Loop Drums</button>
+      <button class="enter-drums">Enter Drums</button>
       <button class="add-measure">Add Measure</button>
       <div class="drum-pieces">
         <div class="kick">Kick:</div>
@@ -57,6 +65,9 @@
     <div class="black-keys"></div>
   </div>
 
+  <div class="visual-loop">
+    <div class=""></div>
+  </div>
 
   </body>
 
