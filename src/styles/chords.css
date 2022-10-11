@@ -1,0 +1,83 @@
+.chords {
+    display: flex;
+    position: relative;
+    height: 150px;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.chords button {
+    display: flex;
+    border: 1px solid black;
+    height: 50px;
+    width: 70px;
+    margin: 10px 10px 10px 10px;
+    background-color: aqua;
+    color: blue;
+    border-radius: 5px;
+}
+
+.loop-chords {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+    top: -5px;
+}
+
+.enter-chord {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+    left: 80px;
+    top: -60px;
+}
+
+.chord-key-label {
+    position: relative;
+    top: -93px;
+    left: 392px;
+}
+
+/* #chord-key {
+    position: relative;
+    top: -110px;
+    left: 430px;
+    width: 40px;
+} */
+
+.duration {
+    display: flex;
+    position: relative;
+    top: -130px;
+    left: 170px;
+    width: 20px;
+}
+
+.duration input {
+    border: 1px black solid;
+    border-radius: 5px;
+    width: 40px;
+    margin-left: 5px;
+}
+
+.chord-type {
+    position: relative;
+    top: -150px;
+    left: 280px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.seventh {
+    position: relative;
+    top: -130px;
+    left: 200px;
+    margin-left: 5px;
+    padding-left: 5px;
+}

@@ -2,6 +2,9 @@ import * as Tone from 'tone'
 import { Player } from 'tone'
 import Drums from './drums'
 
+const hihatHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/hihat.mp3").toDestination()
+const kickHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination()
+const snareHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/snare.mp3").toDestination()
 class Play {
     constructor(chordQueue) {
         this.playChords = this.playChords.bind(this)
@@ -49,9 +52,6 @@ class Play {
     }
     
     async playDrums() {
-        const hihatHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/hihat.mp3").toDestination()
-        const kickHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination()
-        const snareHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/snare.mp3").toDestination()
         let chordsTripped = false
 
         if (this.loopDrums.innerHTML === 'Loop Drums') {

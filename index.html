@@ -8,47 +8,49 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="stylesheet" href="src/styles/reset.css" />
     <script src="./dist/main.js"></script>
-    <link rel="stylesheet" href="./src/styles/piano.css">
+    <link rel="stylesheet" href="/src/styles/piano.css">
+    <link rel="stylesheet" href="src/styles/chords.css">
+    <link rel="stylesheet" href="src/styles/drums.css">
+
     <title>Music Shop</title>
   </head>
 
   <body>
     <h1 class="title">Music Shop</h1>
-    <button class="loop-chords">Loop Chords</button>
-    <button class="enter-chord">Enter</button>
 
-    <label for="chord-key">Key</label>
-    <select name="chord-key" id="chord-key"></select>
-
-    <label for="chord-duration">Duration</label>
-    <input type="text", name="chord-duration" id="chord-duration">
-
-    <label for="chord-type" class="chord-type">
-      <input type="radio" name="chordType" id="chord-type-maj" class="chord-type_maj" checked="checked">
-      <label for="chord-type-maj">Maj</label>
-      <input type="radio" name="chordType" id="chord-type-min" class="chord-type_min">
-      <label for="chord-type-min">Min</label>
-    </label> <br>
-
-    <label for="7th">7th:</label>
-    <input type="checkbox" id="7th" value="7th"/>
-    <br>
-    <br>
+    <div class="chords">
+      <button class="loop-chords">Loop Chords</button>
+      <button class="enter-chord">Enter</button>
+      <label for="chord-key" class="chord-key-label">Key</label>
+      <select name="chord-key" id="chord-key"></select>
+      <div class="duration">
+        <label for="chord-duration">Duration:</label>
+        <input type="text", name="chord-duration" id="chord-duration">
+      </div>
+      <label for="chord-type" class="chord-type">
+        <input type="radio" name="chordType" id="chord-type-maj" class="chord-type_maj" checked="checked">
+        <label for="chord-type-maj">Maj</label>
+        <input type="radio" name="chordType" id="chord-type-min" class="chord-type_min">
+        <label for="chord-type-min">Min</label>
+      </label>
+      <div class="seventh">
+        <label for="7th">7th:</label>
+        <input type="checkbox" id="7th" value="7th"/>
+      </div>
+    </div>
 
     <div class="drums">
       <button class="loop-drums">Loop Drums</button>
-      <button class="add-measure">Add measure</button>
-
-      <h5>Kick</h5>
+      <button class="add-measure">Add Measure</button>
+      <div class="drum-pieces">
+        <div class="kick">Kick:</div>
+        <div class="snare">Snare:</div>
+        <div class="hihat">Hi-Hats:</div>
+      </div>
       <div class="kick-measures"></div>
-
-      <h5>Snare</h5>
       <div class="snare-measures"></div>
-
-      <h5>Hi-Hats</h5>
       <div class="hihat-measures"></div>
     </div>
-    <br>
 
   <div class="piano">
     <div class="white-keys"></div>

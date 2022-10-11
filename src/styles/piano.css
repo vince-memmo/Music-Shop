@@ -1,10 +1,12 @@
 .piano {
+    position: relative;
     height: 180px;
     width: 400px;
     background-color: aqua;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
+    left: 400px;
+    top: 100px;
 }
 
 .white-keys {
@@ -12,7 +14,7 @@
     display: flex;
     justify-content: center;
     padding-top: 40px;
-    left: 60px;
+    left: 65px;
 }
 
 .black-keys {
