@@ -13,6 +13,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    /* background-color: #ccffae7a; */
 }
 
 .drums {
@@ -24,4 +25,5 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    /* background-color: #ccffae7a; */
 }

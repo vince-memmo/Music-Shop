@@ -34,12 +34,13 @@
       <div class="chord-buttons">
         <button class="enter-chord">Enter</button>
         <button class="delete-chord">Delete Chord</button>
+        <button class="mute-chords">Mute Chords</button>
       </div>
       <label for="chord-key" class="chord-key-label">Key</label>
       <select name="chord-key" id="chord-key"></select>
       <div class="duration">
         <label for="chord-duration">Duration:</label>
-        <input type="text", name="chord-duration" id="chord-duration">
+        <input type="text", name="chord-duration" id="chord-duration" value="4">
       </div>
       <label for="chord-type" class="chord-type">
         <input type="radio" name="chordType" id="chord-type-maj" class="chord-type_maj" checked="checked">
@@ -58,6 +59,8 @@
         <button class="enter-drums">Enter Drums</button>
         <button class="delete-drums">Delete</button>
         <button class="add-measure">Add Measure</button>
+        <button class="remove-measure">Remove Measure</button>
+        <button class="mute-drums">Mute Drums</button>
       </div>
       <div class="drum-pieces">
         <div class="drum-names">
@@ -74,18 +77,23 @@
     </div>
   </div>
   
-  <div class="scroller">
-    <button class="start-music">Start Music</button>
-    <div class="scroll-bar">
-      <div class="scroller-titles">
-        <h3>Chords</h3>
-        <h3>Drums</h3>
-        <h3>Time</h3>
+  <div class="scroller-container"></div>
+    <div class="scroller">
+      <div class="scroller-buttons">
+        <button class="start-music">Start Music</button>
+        <button class="mute-all">Mute</button>
       </div>
-      <div class="scrollers">
-        <div class="chords-scroller-region">
+      <div class="scroll-bar">
+        <div class="scroller-titles">
+          <h3>Chords</h3>
+          <h3>Drums</h3>
+          <h3>Time</h3>
         </div>
-        <div class="drums-scroller-region"></div>
+        <div class="scrollers">
+          <div class="chords-scroller-region"></div>
+          <div class="drums-scroller-region"></div>
+          <div class="time-scroller-region"></div>
+        </div>
       </div>
     </div>
   </div>

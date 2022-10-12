@@ -5,7 +5,7 @@ const chordNotes = ['C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A
 
 
 class Chord {
-    constructor () {
+    constructor() {
         this.setUpChordArray = this.setUpChordArray.bind(this)
         this.setupNotesSelection = this.setupNotesSelection.bind(this)
     }

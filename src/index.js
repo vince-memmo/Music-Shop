@@ -5,6 +5,7 @@ import Kick from './scripts/drums'
 import DrumsSetup from './scripts/drums_setup'
 import SetupPiano from './scripts/setup_piano'
 import Piano from './scripts/piano'
+import SetupTime from './scripts/setup_time'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     startButton.addEventListener('click', function() {
         startScreen.style.display = 'none'
     })
+
+    const time = new SetupTime()
+    time.setupTimeEls()
 
     let queueOfChord = []
     console.log('in index!')

@@ -35,33 +35,41 @@ class SongHash {
 
     queueChord() {
         let chordArray = this.chord.setUpChordArray()
-        this.songHash['chords'] = this.songHash['chords'].concat(chordArray)
-        
-        let chordsScroller = document.querySelector('.chords-scroller-region')
-        let chordEl = document.createElement('div')
-        chordEl.setAttribute('class', `display-chord`)
-        chordEl.style.width = `${chordArray[0][0] * 8}` + 'px'
-        console.log(chordArray[0][0] * 8)
-        chordEl.setAttribute('duration', `${chordArray[0][0]}`) 
-        chordEl.id = `${chordArray[0][1]}`
-        chordEl.innerHTML = `${chordArray[0][1]}`
-        chordsScroller.appendChild(chordEl)
+        if (chordArray.length + this.songHash['chords'].length > 48){
+            alert("You cannot have more than 12 measures")
+        } else if (!(chordArray[0][0] > 0)){
+            alert("Duration must be greater than 0")
+        } else {
+            this.songHash['chords'] = this.songHash['chords'].concat(chordArray)
+            let chordsScroller = document.querySelector('.chords-scroller-region')
+            let chordEl = document.createElement('div')
+            chordEl.setAttribute('class', `display-chord`)
+            chordEl.style.width = `${chordArray[0][0] * 20}` + 'px'
+            chordEl.setAttribute('duration', `${chordArray[0][0]}`) 
+            chordEl.id = `${chordArray[0][1]}`
+            chordEl.innerHTML = `${chordArray[0][1]}`
+            chordsScroller.appendChild(chordEl)
+        }
     }
     
+
+    
     queueDrums() {
-        console.log('add drums to hash')
         let drumsHash = this.drums.setUpDrumsHash()
-        this.songHash['kick'] = this.songHash['kick'].concat(drumsHash['kick'])
-        this.songHash['snare'] = this.songHash['snare'].concat(drumsHash['snare'])
-        this.songHash['hihat'] = this.songHash['hihat'].concat(drumsHash['hihat'])
-        
-        let drumsScroller = document.querySelector('.drums-scroller-region')
-        let drumEl = document.createElement('div')
-        drumEl.setAttribute('class', `display-drums`)
-        drumEl.style.width = `${drumsHash['hihat'].length*8}` + 'px'
-        console.log(drumsHash['hihat'].length*8)
-        drumEl.setAttribute('duration', `${drumsHash['hihat'].length}`) 
-        drumsScroller.appendChild(drumEl)
+        if (drumsHash['kick'].length + this.songHash['kick'].length > 48) {
+            alert("You cannot have more than 12 measures")
+        } else {
+            this.songHash['kick'] = this.songHash['kick'].concat(drumsHash['kick'])
+            this.songHash['snare'] = this.songHash['snare'].concat(drumsHash['snare'])
+            this.songHash['hihat'] = this.songHash['hihat'].concat(drumsHash['hihat'])
+            
+            let drumsScroller = document.querySelector('.drums-scroller-region')
+            let drumEl = document.createElement('div')
+            drumEl.setAttribute('class', `display-drums`)
+            drumEl.style.width = `${drumsHash['hihat'].length*20}` + 'px'
+            drumEl.setAttribute('duration', `${drumsHash['hihat'].length}`) 
+            drumsScroller.appendChild(drumEl)
+        }
     }
     
     deleteChord() {
@@ -73,7 +81,6 @@ class SongHash {
             i++
         }
         lastChord.remove()
-        debugger
     }
 
     deleteDrums() {

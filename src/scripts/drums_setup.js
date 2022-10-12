@@ -9,6 +9,8 @@ class DrumsSetup {
     this.addFirstMeasure = this.addFirstMeasure.bind(this)
     this.tiggerKick = document.querySelector('.add-measure')
     this.tiggerKick.addEventListener("click", this.addMeasure)
+    this.tiggerKick = document.querySelector('.remove-measure')
+    this.tiggerKick.addEventListener("click", this.removeMeasure)
     this.measure = 0
     }
 
