@@ -38,8 +38,8 @@
 }
 
 .display-chord {
-    border: 1px solid black;
-    border-radius: 10px;
+    border: .025px solid darkblue;
+    border-radius: 7px;
     min-height: 30%;
     background-color: #00ddff;
 }
@@ -54,7 +54,7 @@
 }
 
 .display-drums {
-    border: 1px solid black;
+    border: .025px solid darkblue;
     border-radius: 10px;
     min-height: 30%;
     background-color: #00ddff;

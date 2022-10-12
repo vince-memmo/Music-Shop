@@ -23,7 +23,8 @@ class Play {
         this.startMusic = document.querySelector('.start-music')
         this.startMusic.addEventListener("click", this.playSong)
 
-        this.drumLoopAtTop = true
+        this.deleteDrumsFromQueue = document.querySelector('.delete-drums')
+        this.deleteDrumsFromQueue.addEventListener("click", this.queueDrums)
     }
     
     async sleep(milliseconds){
@@ -32,6 +33,8 @@ class Play {
 
 
     playSong() {
+        debugger
+        console.log('play music')
         if (this.startMusic.innerHTML === 'Start Music') {
             this.startMusic.innerHTML = 'End Music'
         } else {

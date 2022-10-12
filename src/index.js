@@ -36,6 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chord.setupNotesSelection()
 
     const songQueue = new SongHash()
-    
+
     const play = new Play(songQueue.getQueue())
 })
