@@ -1,12 +1,16 @@
+.piano-space {
+    display: flex;
+    justify-content: center;
+}
+
 .piano {
     position: relative;
     height: 180px;
     width: 400px;
     background-color: aqua;
     border-radius: 20px;
+    justify-content: center;
     display: flex;
-    left: 400px;
-    top: 100px;
 }
 
 .white-keys {

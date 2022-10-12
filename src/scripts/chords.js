@@ -38,13 +38,13 @@ class Chord {
         }
         
         if (document.getElementById('chord-type-maj').checked && document.getElementById('7th').checked) {
-            chordArray.unshift([root, third, fifth, seventh, duration])
+            chordArray.unshift([duration, root, third, fifth, seventh])
         } else if (document.getElementById('chord-type-min').checked && document.getElementById('7th').checked) {
-            chordArray.unshift([root, minorThird, fifth, seventh, duration])
+            chordArray.unshift([duration, root, minorThird, fifth, seventh])
         } else if (document.getElementById('chord-type-maj').checked) {
-            chordArray.unshift([root, third, fifth, duration])
+            chordArray.unshift([duration, root, third, fifth])
         } else {
-            chordArray.unshift([root, minorThird, fifth, duration])
+            chordArray.unshift([duration, root, minorThird, fifth])
         }
         return chordArray
     }

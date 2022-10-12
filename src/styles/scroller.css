@@ -1,0 +1,61 @@
+.scroller {
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.start-music {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 50px;
+}
+
+.scroll-bar {
+    display: flex;
+}
+
+.scroller-titles {
+    margin: 10px;
+}
+
+.scrollers {
+    display: flex;
+    flex-direction: column;
+    min-width: 80%;
+    margin: 10px;
+}
+
+.chords-scroller-region {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 30%;
+    display: flex;
+}
+
+.display-chord {
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 30%;
+    background-color: #00ddff;
+}
+
+.drums-scroller-region {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 30%;
+    display: flex;
+}
+
+.display-drums {
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 30%;
+    background-color: #00ddff;
+}

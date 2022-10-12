@@ -8,26 +8,34 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="stylesheet" href="src/styles/reset.css" />
     <script src="./dist/main.js"></script>
-    <link rel="stylesheet" href="/src/styles/piano.css">
+    <link rel="stylesheet" href="/src/styles/title.css">
+    <link rel="stylesheet" href="/src/styles/instruments.css">
     <link rel="stylesheet" href="src/styles/chords.css">
     <link rel="stylesheet" href="src/styles/drums.css">
+    <link rel="stylesheet" href="/src/styles/scroller.css">
+    <link rel="stylesheet" href="/src/styles/piano.css">
     <link rel="stylesheet" href="src/index.scss">
 
     <title>Music Shop</title>
   </head>
 
   <body>
-    <button class="start-music">Start Music</button>
-    <div class="start-screen">
-      <h1 class="start">Music Shop</h1>
-      <h2>Instructions</h2>
-    </div>
-
-
-    <h1 class="title">Music Shop</h1>
-
+  <div class="start-screen">
+    <h1 class="start">Music Shop</h1>
+    <h2>Instructions</h2>
+  </div>
+    
+  <div class="title">
+    <h1>Music Shop</h1>
+  </div>
+  
+  <div class="instruments">
     <div class="chords">
-      <button class="enter-chord">Enter</button>
+      <div class="chord-buttons">
+        <button class="enter-chord">Enter</button>
+        <button class="delete-chord">Delete Chord</button>
+        <button class="delete-all-chords">Delete All Chords</button>
+      </div>
       <label for="chord-key" class="chord-key-label">Key</label>
       <select name="chord-key" id="chord-key"></select>
       <div class="duration">
@@ -44,29 +52,50 @@
         <label for="7th">7th:</label>
         <input type="checkbox" id="7th" value="7th"/>
       </div>
-
     </div>
-
+    
     <div class="drums">
-      <button class="enter-drums">Enter Drums</button>
-      <button class="add-measure">Add Measure</button>
-      <div class="drum-pieces">
-        <div class="kick">Kick:</div>
-        <div class="snare">Snare:</div>
-        <div class="hihat">Hi-Hats:</div>
+      <div class="buttons">
+        <button class="enter-drums">Enter Drums</button>
+        <button class="delete-drums">Delete</button>
+        <button class="add-measure">Add Measure</button>
       </div>
-      <div class="kick-measures"></div>
-      <div class="snare-measures"></div>
-      <div class="hihat-measures"></div>
+      <div class="drum-pieces">
+        <div class="drum-names">
+          <div class="kick">Kick:</div>
+          <div class="snare">Snare:</div>
+          <div class="hihat">Hi-Hats:</div>
+        </div>
+        <div class="measures">
+          <div class="kick-measures"></div>
+          <div class="snare-measures"></div>
+          <div class="hihat-measures"></div>
+        </div>
+      </div>
     </div>
-
-  <div class="piano">
-    <div class="white-keys"></div>
-    <div class="black-keys"></div>
+  </div>
+  
+  <div class="scroller">
+    <button class="start-music">Start Music</button>
+    <div class="scroll-bar">
+      <div class="scroller-titles">
+        <h3>Chords</h3>
+        <h3>Drums</h3>
+        <h3>Time</h3>
+      </div>
+      <div class="scrollers">
+        <div class="chords-scroller-region">
+        </div>
+        <div class="drums-scroller-region"></div>
+      </div>
+    </div>
   </div>
 
-  <div class="visual-loop">
-    <div class=""></div>
+  <div class="piano-space">
+    <div class="piano">
+      <div class="white-keys"></div>
+      <div class="black-keys"></div>
+    </div>
   </div>
 
   </body>

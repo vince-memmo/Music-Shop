@@ -1,0 +1,27 @@
+.instruments {
+    display: flex;
+    margin: 20px;
+    justify-content: space-around;
+}
+
+.chords {
+    position: relative;
+    height: 125px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.drums {
+    position: relative;
+    height: 125px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}

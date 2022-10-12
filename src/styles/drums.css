@@ -1,67 +1,41 @@
-.drums {
+.drums .buttons {
     display: flex;
-    position: relative;
-    height: 150px;
-    width: 500px;
-    top: 85px;
-    margin-left: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    flex-direction: column;
-}
-
-.drums button {
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid black;
+    justify-content: space-around;
     height: 50px;
-    width: 70px;
-    margin: 10px 10px 10px 10px;
-    background-color: aqua;
-    color: blue;
-    border-radius: 5px;
 }
 
-.loop-drums {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    margin: 20px 20px 20px 20px;
-    left: 20px;
-    top: -5px;
+.enter-drums {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    height: 10px;
+}
+
+.delete-drums {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    height: 10px;
 }
 
 .add-measure {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    margin: 20px 20px 20px 20px;
-    left: 110px;
-    top: -65px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    height: 10px;
 }
 
 .drum-pieces {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    top: -50px;
-    padding-left: 20px;
+    align-items: center;
 }
 
-.kick-measures {
-    position: relative;
-    left: 100px;
-    top: -105px;
+/* .drum-names {
+    align-items: center;
 }
 
-.snare-measures {
-    position: relative;
-    left: 100px;
-    top: -105px;
-}
+.measures {
+    align-items: center;
+} */
 
-.hihat-measures {
-    position: relative;
-    left: 100px;
-    top: -105px;
-}
+

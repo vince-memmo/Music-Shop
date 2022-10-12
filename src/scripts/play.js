@@ -7,7 +7,7 @@ const kickHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/
 const snareHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/snare.mp3").toDestination()
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 const now = Tone.now()
-const eighth = 250
+const bpm = 500
 
 class Play {
     constructor(songHash) {
@@ -30,138 +30,46 @@ class Play {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
 
-    
-    async playSong() {
+
+    playSong() {
         if (this.startMusic.innerHTML === 'Start Music') {
             this.startMusic.innerHTML = 'End Music'
         } else {
             this.startMusic.innerHTML = 'Start Music'
         }
-
-        Tone.loaded().then(() => {
-            kickHit.volume.value = -100
-            kickHit.start();
-        });
-        Tone.loaded().then(() => {
-            snareHit.volume.value = -100
-            snareHit.start();
-        });
-        Tone.loaded().then(() => {
-            hihatHit.volume.value = -100
-            hihatHit.start();
-        });
-
         let loopLength = Math.max(...Object.values(this.songHash).map(arr=> arr.length))
-        debugger
+        this.playChords(loopLength)
+        this.playDrums(loopLength)
+    }
 
+    async playChords(loopLength) {
+        let chords = []
         while(this.startMusic.innerHTML === 'End Music'){
-            kickHit.volume.value = 0
-            snareHit.volume.value = 0
-            hihatHit.volume.value = 0
-            
             for(let i = 0; i < loopLength; i++) {
                 if (this.songHash['chords'][i] !== 'rest' && this.songHash['chords'][i] !== undefined) {
-                    synth.triggerAttack(this.songHash['chords'][i], now); //play sound
-                    synth.triggerRelease(this.songHash['chords'][i], now + duration/4); //end sound
+                    synth.triggerAttackRelease(this.songHash['chords'][i].slice(1), `${this.songHash['chords'][i].slice(0,1)[0] / (bpm/250)}`); //play sound
                 }
-
-                if (drumsHash['kick'][i] === 'hit'){
-                    Tone.loaded().then(() => {
-                        kickHit.start();
-                    });
-                }
-                
-                if (drumsHash['snare'][i] === 'hit'){
-                    Tone.loaded().then(() => {
-                        snareHit.start();
-                    });
-                }
-                
-                if (drumsHash['hihat'][i] === 'hit'){
-                    Tone.loaded().then(() => {
-                        hihatHit.start();
-                    });
-                }
-                
-                await this.sleep(eighth);
+                await this.sleep(bpm);
             }
         }
-
     }
-    
-    async playChords() {
-            for (let i = 0; i < this.chordQueue.length; i++){
-                console.log(`play ${this.chordQueue[i]}`)
-                let chordArray = this.chordQueue[i]['chordArray'][0]
-                let duration = this.chordQueue[i]['time']
-                synth.triggerAttack(chordArray, now); //play sound
-                synth.triggerRelease(chordArray, now + duration/2); //end sound
-                await this.sleep(duration*500);
-            }
 
-    }
-    
-    async playDrums() {
-        let chordsTripped = false
-        
-        if (this.loopDrums.innerHTML === 'Loop Drums') {
-            this.loopDrums.innerHTML = 'Break Drum Loop'
-        } else {
-            this.loopDrums.innerHTML = 'Loop Drums'
-        }
-        
-        
-        Tone.loaded().then(() => {
-            kickHit.volume.value = -100
-            kickHit.start();
-        });
-        Tone.loaded().then(() => {
-            snareHit.volume.value = -100
-            snareHit.start();
-        });
-        Tone.loaded().then(() => {
-            hihatHit.volume.value = -100
-            hihatHit.start();
-        });
-        
-        
-        let drumsHash = this.drums.setUpDrums()
-        
-        
-        while(this.loopDrums.innerHTML === 'Break Drum Loop'){
-            kickHit.volume.value = 0
-            snareHit.volume.value = 0
-            hihatHit.volume.value = 0
-            if (this.loopChords.innerHTML === 'Break Chord Loop' && chordsTripped === false) {
-                this.playChords()
-                chordsTripped = true
-            }
-            this.drumLoopAtTop = false
-            for(let i = 0; i < drumsHash['kick'].length; i++) {
-                if (drumsHash['kick'][i] === 'hit'){
-                    Tone.loaded().then(() => {
-                        kickHit.start();
-                    });
-                }
-                
-                if (drumsHash['snare'][i] === 'hit'){
-                    Tone.loaded().then(() => {
-                        snareHit.start();
-                    });
-                }
-                
-                if (drumsHash['hihat'][i] === 'hit'){
-                    Tone.loaded().then(() => {
-                        hihatHit.start();
-                    });
-                }
-                
-                await this.sleep(250);
-                this.drumLoopAtTop = true
+    async playDrums(loopLength) {
+        while(this.startMusic.innerHTML === 'End Music'){
+            // kickHit.volume.value = 0
+            // snareHit.volume.value = 0
+            // hihatHit.volume.value = 0
+            
+            for(let i = 0; i < loopLength; i++) {
+                Tone.loaded().then(() => {
+                    if (this.songHash['kick'][i] === 'hit' && this.songHash['kick'][i] !== undefined) kickHit.start()
+                    if (this.songHash['snare'][i] === 'hit' && this.songHash['snare'][i] !== undefined) snareHit.start()
+                    if (this.songHash['hihat'][i] === 'hit' && this.songHash['hihat'][i] !== undefined) hihatHit.start()
+                });
+                await this.sleep(bpm);
             }
         }
     }
 }
-
 export default Play
-
+    

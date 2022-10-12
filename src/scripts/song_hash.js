@@ -17,16 +17,32 @@ class SongHash {
         this.drums = new Drums()
         this.queueDrums = this.queueDrums.bind(this)
 
-        this.moveToQueue = document.querySelector('.enter-chord')
-        this.moveToQueue.addEventListener("click", this.queueChord)
+        this.moveChordToQueue = document.querySelector('.enter-chord')
+        this.moveChordToQueue.addEventListener("click", this.queueChord)
 
-        this.moveToQueue = document.querySelector('.enter-drums')
-        this.moveToQueue.addEventListener("click", this.queueDrums)
+        this.moveDrumsToQueue = document.querySelector('.enter-drums')
+        this.moveDrumsToQueue.addEventListener("click", this.queueDrums)
+
+        this.deleteChordFromQueue = document.querySelector('.enter-chord')
+        this.deleteChordFromQueue.addEventListener("click", this.queueChord)
+
+        this.deleteDrumsFromQueue = document.querySelector('.enter-drums')
+        this.deleteDrumsFromQueue.addEventListener("click", this.queueDrums)
     }
 
     queueChord() {
         let chordArray = this.chord.setUpChordArray()
         this.songHash['chords'] = this.songHash['chords'].concat(chordArray)
+
+        let chordsScroller = document.querySelector('.chords-scroller-region')
+        let chordEl = document.createElement('div')
+        chordEl.setAttribute('class', `display-chord`)
+        chordEl.style.width = `${chordArray[0][0] * 8}` + 'px'
+        console.log(chordArray[0][0] * 8)
+        chordEl.setAttribute('duration', `${chordArray[0][0]}`) 
+        chordEl.id = `${chordArray[0][1]}`
+        chordEl.innerHTML = `${chordArray[0][1]}`
+        chordsScroller.appendChild(chordEl)
     }
 
     queueDrums() {
@@ -35,6 +51,14 @@ class SongHash {
         this.songHash['kick'] = this.songHash['kick'].concat(drumsHash['kick'])
         this.songHash['snare'] = this.songHash['snare'].concat(drumsHash['snare'])
         this.songHash['hihat'] = this.songHash['hihat'].concat(drumsHash['hihat'])
+
+        let drumsScroller = document.querySelector('.drums-scroller-region')
+        let drumEl = document.createElement('div')
+        drumEl.setAttribute('class', `display-drums`)
+        drumEl.style.width = `${drumsHash['hihat'].length*8}` + 'px'
+        console.log(drumsHash['hihat'].length*8)
+        drumEl.setAttribute('duration', `${drumsHash['hihat'].length}`) 
+        drumsScroller.appendChild(drumEl)
     }
     
     getQueue() {
