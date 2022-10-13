@@ -27,3 +27,13 @@
     flex-direction: column;
     /* background-color: #ccffae7a; */
 }
+
+.bpm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bpm div {
+    justify-content: center;
+}
