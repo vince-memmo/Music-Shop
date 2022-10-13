@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: rgba(220, 245, 245, 0.200);
 }
 
 .scroller-buttons {
@@ -23,6 +24,7 @@
     border-radius: 3px;
     margin: 10px 10px 0 10px;
     padding: 5px;
+    background-color: white;
 }
 
 .mute-all {
@@ -30,6 +32,7 @@
     border-radius: 3px;
     margin: 10px 10px 0 10px;
     padding: 5px;
+    background-color: white;
 }
 
 .scroll-bar {
@@ -47,7 +50,6 @@
     margin-bottom: 8px;
 }
 
-
 .scrollers {
     display: flex;
     flex-direction: column;
@@ -61,6 +63,8 @@
     width: 960px;
     min-height: 30%;
     display: flex;
+    background-color: white;
+
 }
 
 .display-chord {
@@ -81,6 +85,8 @@
     width: 960px;
     min-height: 30%;
     display: flex;
+    background-color: white;
+
 }
 
 .display-drums {

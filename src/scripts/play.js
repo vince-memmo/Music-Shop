@@ -47,6 +47,12 @@ class Play {
 
 
     playSong() {
+        if (parseInt(document.querySelector('.bpm').value) < 60 || parseInt(document.querySelector('.bpm').value) > 200) {
+            alert("BPM must be between 60 and 200")
+            this.startMusic.innerHTML = 'Play'
+            return
+        } 
+
         kickHit.volume.value = 0
         snareHit.volume.value = 0
         hihatHit.volume.value = 0
@@ -59,10 +65,6 @@ class Play {
             this.startMusic.innerHTML = 'Play'
         }
 
-        if (parseInt(document.querySelector('.bpm').value) < 60 || parseInt(document.querySelector('.bpm').value) > 200) {
-            alert("BPM must be between 60 and 200")
-            return
-        } 
 
         const bpm = 1000/(parseInt(document.querySelector('.bpm').value) / 60)
         const loopLength = Math.max(...Object.values(this.songHash).map(arr=> arr.length))
