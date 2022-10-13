@@ -68,6 +68,9 @@
     border-radius: 7px;
     min-height: 30%;
     background-color: #00ddff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .drums-scroller-region {

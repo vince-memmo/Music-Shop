@@ -47,7 +47,19 @@ class SongHash {
             chordEl.style.width = `${chordArray[0][0] * 20}` + 'px'
             chordEl.setAttribute('duration', `${chordArray[0][0]}`) 
             chordEl.id = `${chordArray[0][1]}`
-            chordEl.innerHTML = `${chordArray[0][1]}`
+            if (document.querySelector('.chord-type_maj').checked === true) {
+                if (chordArray[0].length === 5) {
+                    chordEl.innerHTML = `${chordArray[0][1][0]}7`
+                } else {
+                    chordEl.innerHTML = `${chordArray[0][1][0]}`
+                }
+            } else {
+                if (chordArray[0].length === 5) {
+                    chordEl.innerHTML = `${chordArray[0][1][0]}m7`
+                } else {
+                    chordEl.innerHTML = `${chordArray[0][1][0]}m`
+                }
+            }
             chordsScroller.appendChild(chordEl)
         }
     }
