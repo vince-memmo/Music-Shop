@@ -6,10 +6,10 @@ const hihatHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src
 const kickHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/kick.mp3").toDestination()
 const snareHit = new Tone.Player("https://kernapillar.github.io/4-block-loop/src/drum_samples/snare.mp3").toDestination()
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-kickHit.volume.value = -Infinity
-snareHit.volume.value = -Infinity
-hihatHit.volume.value = -Infinity
 Tone.loaded().then(() => {
+    kickHit.volume.value = -Infinity
+    snareHit.volume.value = -Infinity
+    hihatHit.volume.value = -Infinity
     kickHit.start()
     snareHit.start()
     hihatHit.start()
@@ -60,7 +60,7 @@ class Play {
         
         if (this.startMusic.innerHTML === 'Play') {
             synth.volume.value = -5
-            this.startMusic.innerHTML = 'End Music'
+            this.startMusic.innerHTML = 'Stop'
         } else {
             this.startMusic.innerHTML = 'Play'
         }
@@ -77,7 +77,7 @@ class Play {
     async playChords(loopLength, bpm) {
         
         let chords = []
-        while(this.startMusic.innerHTML === 'End Music'){
+        while(this.startMusic.innerHTML === 'Stop'){
             for(let i = 0; i < loopLength; i++) {
                 if (this.startMusic.innerHTML === 'Play') {
                     synth.volume.value = -Infinity
@@ -93,7 +93,7 @@ class Play {
     }
 
     async playDrums(loopLength, bpm) {
-        while(this.startMusic.innerHTML === 'End Music'){
+        while(this.startMusic.innerHTML === 'Stop'){
             for(let i = 0; i < loopLength; i++) {
                 if (this.startMusic.innerHTML === 'Play') return
                 Tone.loaded().then(() => {
@@ -107,7 +107,7 @@ class Play {
     }
 
     async playTime(loopLength, bpm) {
-        while(this.startMusic.innerHTML === 'End Music'){            
+        while(this.startMusic.innerHTML === 'Stop'){            
             for(let i = 0; i < loopLength; i++) {
                 let timeBoxCurrentOn = document.getElementById(`${i-1}-tick-on`)
                 let timeBoxCurrentOff = document.getElementById(`${i-1}-tick-off`)
