@@ -16,12 +16,16 @@ span, article, footer, time, small {
   background: transparent;
 }
 
-body {
-  /* background-color: #f1f2f441; */
-  /* background-color: #c3b3ff04; */
-  display: flex;
+html {
+  height: 100%;
+  width: 100%;
+}
 
+body {
+  display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 ul {

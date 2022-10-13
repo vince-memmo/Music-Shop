@@ -1,11 +1,12 @@
 @import './styles/reset.css';
 
+
 .start-screen {
+    display: flex;
     color: black;
     z-index: 2;
     background-color: rgb(93, 190, 214);
     height: 100vh;
-    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;

@@ -28,12 +28,18 @@
     /* background-color: #ccffae7a; */
 }
 
-.bpm {
+
+.bpm-div {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.bpm div {
-    justify-content: center;
+.bpm {
+    text-align: center;
+    margin-top: 5px;
+    border: 1px solid black;
+    background-color: azure;
+    width: 30px;
 }

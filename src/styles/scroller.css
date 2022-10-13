@@ -1,5 +1,6 @@
 .scroller-container {
     display: flex;
+    justify-content: center;
 }
 
 .scroller {
@@ -11,8 +12,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    /* background-color: #8bb3f02a; */
 }
 
 .scroller-buttons {
