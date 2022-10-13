@@ -6,21 +6,22 @@
 
 .chords {
     position: relative;
-    height: 125px;
-    width: 500px;
-    border: 1px solid black;
+    height: 135px;
+    width: 550px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     /* background-color: #ccffae7a; */
 }
 
 .drums {
     position: relative;
-    height: 125px;
-    width: 500px;
-    border: 1px solid black;
+    height: 135px;
+    width: 550px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
     border-radius: 10px;
     padding: 10px;
     display: flex;

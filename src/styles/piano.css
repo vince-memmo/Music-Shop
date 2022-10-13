@@ -1,6 +1,6 @@
 .piano-space {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .piano {
@@ -76,3 +76,35 @@
     left: -90px;
 }
 
+.instructions-left {
+    width: 450px;
+    height: 125px;
+    list-style-type: circle;
+    margin: 10px;
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
+}
+
+.instructions-left ul {
+    list-style-type: circle;
+    color: rgb(88, 88, 88);
+    margin-left: 5px;
+}
+
+.instructions-left li {
+    color: rgb(128, 128, 128);
+}
+
+.instructions-right {
+    color: white;
+    width: 450px;
+    height: 125px;
+    list-style-type: circle;
+    margin: 10px;
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+}

@@ -8,35 +8,35 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 0 5px 0 5px;
-    height: 30px;
+    height: 40px;
 }
 
 .delete-drums {
     border: 1px solid black;
     border-radius: 5px;
     padding: 0 5px 0 5px;
-    height: 30px;
+    height: 40px;
 }
 
 .add-measure {
     border: 1px solid black;
     border-radius: 5px;
     padding: 0 5px 0 5px;
-    height: 30px;
+    height: 40px;
 }
 
 .remove-measure {
     border: 1px solid black;
     border-radius: 5px;
     padding: 0 5px 0 5px;
-    height: 30px;
+    height: 40px;
 }
 
 .mute-drums {
     border: 1px solid black;
     border-radius: 5px;
     padding: 0 5px 0 5px;
-    height: 30px;
+    height: 40px;
 }
 
 .drum-pieces {
@@ -53,8 +53,12 @@
     border: 1px solid black;
     border-radius: 5px;
     margin-top: 5px;
-    padding: 0 5px 0 5px;
+    padding: 0 5px 0px 5px;
     height: 20px;
+}
+
+.measures {
+    margin-left: 10px;
 }
 
 
