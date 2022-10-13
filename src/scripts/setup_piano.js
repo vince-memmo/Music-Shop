@@ -10,6 +10,9 @@ class SetupPiano {
 
     constructor () {
         this.keys = document.querySelectorAll('.key')
+        this.instructionsButton = document.querySelector('.button-left')
+        this.instructionsButton.addEventListener("mouseover", showInstructions)    
+        this.instructionsButton.addEventListener("mouseout", hideInstructions)    
     }
 
     setupPiano() {
@@ -32,6 +35,25 @@ class SetupPiano {
         }
 
     }
+}
+
+function showInstructions() {
+    console.log('hovered')
+    let instructions = document.querySelector('.instructions-left')
+    let instructionsHider = document.querySelector('.instructions-hider')
+
+    instructions.style.display = 'block'
+    instructionsHider.style.display = 'none'
+
+}
+
+function hideInstructions() {
+    console.log('hovered')
+    let instructions = document.querySelector('.instructions-left')
+    let instructionsHider = document.querySelector('.instructions-hider')
+
+    instructions.style.display = 'none'
+    instructionsHider.style.display = 'block'
 
 }
 

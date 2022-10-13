@@ -27,6 +27,7 @@ class Play {
         this.muteChordsButton.addEventListener("click", muteChords)
         this.muteDrumsButton = document.querySelector('.mute-drums')
         this.muteDrumsButton.addEventListener("click", muteDrums)
+        
         this.muteButton = document.querySelector('.mute-all')
         this.muteButton.addEventListener("click", muteAll)      
     }
@@ -76,8 +77,6 @@ class Play {
             }
         }
     }
-
-    //[i].slice(0,1)
 
     async playDrums(loopLength, bpm) {
         while(this.startMusic.innerHTML === 'End Music'){
@@ -160,8 +159,19 @@ function muteChords() {
 }
 
 function muteAll() {
-    muteChords()
-    muteDrums()
+    if (document.querySelector('.mute-all').innerHTML === 'Mute') {
+        kickHit.volume.value = -Infinity
+        snareHit.volume.value = -Infinity
+        hihatHit.volume.value = -Infinity
+        synth.volume.value = -Infinity
+        document.querySelector('.mute-all').innerHTML = 'Unmute'
+    } else {
+        kickHit.volume.value = 0
+        snareHit.volume.value = 0
+        hihatHit.volume.value = 0
+        synth.volume.value = 0
+        document.querySelector('.mute-all').innerHTML = 'Mute'
+    }
 }
 
 export default Play
