@@ -8,6 +8,10 @@ The goal is not to be able to make an entire song, but rather flush out small ch
 In Music Workshop, users are able to:
 
 1. Loop a drum/percussion beat
-2. Loop a chord progression on a guitar that has a selected strumming pattern, chords, and duration of each  chord
+2. Loop a chord progression on synthesizer which ustilizes Tone.js
 3. Compose a piano melody by selecting notes on their key board
 4. Change the tempo of their song clip
+
+![Screen Shot 2022-12-10 at 5 54 37 PM](https://user-images.githubusercontent.com/110570521/206883237-1bf1b929-4e24-46f7-8490-6291d55ea34c.png)
+
+![Screen Shot 2022-12-10 at 6 01 49 PM](https://user-images.githubusercontent.com/110570521/206883229-ff4e58d1-fab6-43f4-80e5-4ee902061ac7.png)
