@@ -38,7 +38,6 @@ class SetupPiano {
 }
 
 function showInstructions() {
-    console.log('hovered')
     let instructions = document.querySelector('.instructions-left')
     let instructionsHider = document.querySelector('.instructions-hider')
 
@@ -48,7 +47,6 @@ function showInstructions() {
 }
 
 function hideInstructions() {
-    console.log('hovered')
     let instructions = document.querySelector('.instructions-left')
     let instructionsHider = document.querySelector('.instructions-hider')
 

@@ -1,5 +1,4 @@
 import * as Tone from 'tone'
-console.log('chords working!')
 const selectionNotes = ['C','Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']; 
 const chordNotes = ['C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4','Bb4', 'B4']; 
 
@@ -20,7 +19,6 @@ class Chord {
     }
 
     setUpChordArray() {
-        console.log('play music worked')
         let durationEl= document.getElementById('chord-duration').value
         const duration = parseInt(durationEl)
 

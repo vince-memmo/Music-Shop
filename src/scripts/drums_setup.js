@@ -1,5 +1,4 @@
 import * as Tone from 'tone' 
-console.log('kick working!') 
 import { Player } from 'tone';
 
 let checkboxIndex = 0
@@ -20,7 +19,6 @@ class DrumsSetup {
     }
 
     addFirstMeasure() {
-        console.log('kick measure added')
         const kickMeasure= document.querySelector('.kick-measures')
         const snareMeasure= document.querySelector('.snare-measures')
         const hihatMeasure= document.querySelector('.hihat-measures')
@@ -58,7 +56,6 @@ class DrumsSetup {
         let checkboxes = document.querySelectorAll('.drum-checkbox')
         if (checkboxes.length === 48) return
 
-        console.log('kick measure added')
         const kickMeasure= document.querySelector('.kick-measures')
         const snareMeasure= document.querySelector('.snare-measures')
         const hihatMeasure= document.querySelector('.hihat-measures')

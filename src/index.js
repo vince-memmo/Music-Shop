@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     time.setupTimeEls()
 
     let queueOfChord = []
-    console.log('in index!')
 
     const setUpPiano = new SetupPiano()
     setUpPiano.setupPiano()

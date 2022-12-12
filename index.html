@@ -19,138 +19,143 @@
     <link rel="stylesheet" href="./src/styles/scroller.css">
     <link rel="stylesheet" href="./src/styles/piano.css">
     <link rel="stylesheet" href="./src/index.scss">
-
     <title>Music Shop</title>
+    <link rel="icon" type="image/x-icon" href="./src/images/favicon.ico?">
   </head>
 
   <body>
-  <div class="start-screen">
-    <h1 class="start">Enter Music Shop</h1>
-    <h2>A Musician's Portable Workshop</h2>
-  </div>
-    
-  <div class="title">
-    <h1>Music Shop</h1>
-  </div>
-  
-  <div class="instruments">
-    <div class="chords">
-      <div class="chord-buttons">
-        <button class="enter-chord">Enter Chord</button>
-        <button class="delete-chord">Delete Chord</button>
-        <button class="mute-chords">Mute Chords</button>
-      </div>
-      <div class="chord-input-container">
-        <div class="key-container">
-          <label for="chord-key" class="chord-key-label">Key:</label>
-          <select name="chord-key" id="chord-key"></select>
-        </div>
-        <div class="duration">
-          <label for="chord-duration">Duration:</label>
-          <input type="text", name="chord-duration" id="chord-duration" value="4">
-        </div>
-        <label for="chord-type" class="chord-type">
-          <input type="radio" name="chordType" id="chord-type-maj" class="chord-type_maj" checked="checked">
-          <label for="chord-type-maj">Maj</label>
-          <input type="radio" name="chordType" id="chord-type-min" class="chord-type_min">
-          <label for="chord-type-min">Min</label>
-        </label>
-        <div class="seventh">
-          <label for="7th">7th:</label>
-          <input type="checkbox" id="7th" value="7th"/>
-        </div>
-      </div>
-    </div>
-
-    <div class="bpm-div">
-      <label for="bpm">BPM</label>
-      <input type="text" name="bpm" id="bpm" value="120" class="bpm">
+    <div class="start-screen">
+      <h1 class="start">Enter Music Shop</h1>
+      <h2>A Musician's Portable Workshop</h2>
     </div>
 
     
-    <div class="drums">
-      <div class="buttons">
-        <button class="enter-drums">Enter Drums</button>
-        <button class="delete-drums">Delete</button>
-        <button class="add-measure">Add Measure</button>
-        <button class="remove-measure">Remove Measure</button>
-        <button class="mute-drums">Mute Drums</button>
-      </div>
-      <div class="drum-pieces">
-        <div class="drum-names">
-          <div class="kick">Kick:</div>
-          <div class="snare">Snare:</div>
-          <div class="hihat">Hi-Hats:</div>
+    <div class='page-wrapper'>
+      <div class="title">
+        <h1 class="music-shop">Music Shop</h1>
+        <div class="image-links">
+          <a href="https://github.com/vince-memmo/Music-Shop" target="_blank"><img class="social-link" src="https://kernify-seed.s3.us-west-1.amazonaws.com/github_white_logo.png" alt="github link"></a>
+          <a href="https://www.linkedin.com/in/vince-memmo-394247105/" target="_blank"><img class="social-link" src="https://kernify-seed.s3.us-west-1.amazonaws.com/linkedin_white_logo.png" alt="github link"></a>        </div>
         </div>
-        <div class="measures">
-          <div class="kick-measures"></div>
-          <div class="snare-measures"></div>
-          <div class="hihat-measures"></div>
+      
+      <div class="instruments">
+        <div class="chords">
+          <div class="chord-buttons">
+            <button class="enter-chord">Enter Chord</button>
+            <button class="delete-chord">Delete Chord</button>
+            <button class="mute-chords">Mute Chords</button>
+          </div>
+          <div class="chord-input-container">
+            <div class="key-container">
+              <label for="chord-key" class="chord-key-label">Key:</label>
+              <select name="chord-key" id="chord-key"></select>
+            </div>
+            <div class="duration">
+              <label for="chord-duration">Duration:</label>
+              <input type="text", name="chord-duration" id="chord-duration" value="4">
+            </div>
+            <label for="chord-type" class="chord-type">
+              <input type="radio" name="chordType" id="chord-type-maj" class="chord-type_maj" checked="checked">
+              <label for="chord-type-maj">Maj</label>
+              <input type="radio" name="chordType" id="chord-type-min" class="chord-type_min">
+              <label for="chord-type-min">Min</label>
+            </label>
+            <div class="seventh">
+              <label for="7th">7th:</label>
+              <input type="checkbox" id="7th" value="7th"/>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="clear-drums-button">
-        <button class="clear-drums">Clear Drums</button>
-      </div>
-    </div>
-  </div>
-  
-  <div class="scroller-container">
-    <div class="scroller">
-      <div class="scroller-buttons">
-        <button class="start-music">Play</button>
-        <button class="mute-all">Mute</button>
-      </div>
-      <div class="scroll-bar">
-        <div class="scroller-titles">
-          <h3 class="drums-title">Chords</h3>
-          <h3>Drums</h3>
-          <h3>Time</h3>
-        </div>
-        <div class="scrollers">
-          <div class="chords-scroller-region"></div>
-          <div class="drums-scroller-region"></div>
-          <div class="time-scroller-region"></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="piano-space">
-    <div class="instructions-hider"></div>
-    <div class="instructions-left">
-      <ul>Music Shop allows you to loop through chords and a drum beat so you can workshop melodies with the keyboard all on your computer - no instruments required
-        <li>When entering a chord, 'Duration' refers to the number of quarter notes that the chord will be played for</li>
-        <li>Each column on the drums represents one quarter note</li>
-        <li>You can add multiple measures at a time by pressing the 'Add Measure' button</li>
-        <li>'Clear Drums' will empty the queued up drum pattern</li>
-        <li>To play your chord loop, simply press 'Play' above the loop</li>
-        <li>You can mute the whole track, as well as the chords and drums, individually</li>
-        <li>While your loop is playing, use the keyboard to improvise and hone in melodies</li>
-        <li>To play the piano, use the corresponding keyboard keys</li>
-        <li>Music Shop allows up to 12 measures</li>
-      </ul>
-    </div>
-    <button class="button-left">i</button>
-    <div class="piano">
-      <div class="white-keys"></div>
-      <div class="black-keys"></div>
-    </div>
-    <div class="instructions-right">
-      <ul>Music Shop allows you to loop through chords and a drum beat so you can workshop melodies with the keyboard all on your computer - no instruments required
-        <li>When entering a chord, 'Duration' refers to the number of quarter notes that the chord will be played for</li>
-        <li>Each column on the drums represents one quarter note</li>
-        <li>You can add multiple drum measures at a time by pressing the 'Add Measure' button</li>
-        <li>'Clear Drums' will empty the queued up drum pattern</li>
-        <li>To play your chord loop, simply press 'Play' above the loop</li>
-        <li>You can mute the whole track, as well as the chords and drums, individually</li>
-        <li>While your loop is playing, use the keyboard to improvise and home in melodies</li>
-        <li>To play the piano, use the corresponding keyboard keys</li>
-        <li>Music Shop allows up to 12 measures per loop</li>
-      </ul>
-    </div>
-    <button class="button-right">i</button>
-  </div>
+        <div class="bpm-div">
+          <label for="bpm">BPM</label>
+          <input type="text" name="bpm" id="bpm" value="120" class="bpm">
+        </div>
 
+        
+        <div class="drums">
+          <div class="buttons">
+            <button class="enter-drums">Enter Drums</button>
+            <button class="delete-drums">Delete</button>
+            <button class="add-measure">Add Measure</button>
+            <button class="remove-measure">Remove Measure</button>
+            <button class="mute-drums">Mute Drums</button>
+          </div>
+          <div class="drum-pieces">
+            <div class="drum-names">
+              <div class="kick">Kick:</div>
+              <div class="snare">Snare:</div>
+              <div class="hihat">Hi-Hats:</div>
+            </div>
+            <div class="measures">
+              <div class="kick-measures"></div>
+              <div class="snare-measures"></div>
+              <div class="hihat-measures"></div>
+            </div>
+          </div>
+          <div class="clear-drums-button">
+            <button class="clear-drums">Clear Drums</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroller-container">
+        <div class="scroller">
+          <div class="scroller-buttons">
+            <button class="start-music">Play</button>
+            <button class="mute-all">Mute</button>
+          </div>
+          <div class="scroll-bar">
+            <div class="scroller-titles">
+              <h3 class="drums-title">Chords</h3>
+              <h3>Drums</h3>
+              <h3>Time</h3>
+            </div>
+            <div class="scrollers">
+              <div class="chords-scroller-region"></div>
+              <div class="drums-scroller-region"></div>
+              <div class="time-scroller-region"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="piano-space">
+        <div class="instructions-hider"></div>
+        <div class="instructions-left">
+          <ul>Music Shop allows you to loop through chords and a drum beat so you can workshop melodies with the keyboard all on your computer - no instruments required
+            <li>When entering a chord, 'Duration' refers to the number of quarter notes that the chord will be played for</li>
+            <li>Each column on the drums represents one quarter note</li>
+            <li>You can add multiple measures at a time by pressing the 'Add Measure' button</li>
+            <li>'Clear Drums' will empty the queued up drum pattern</li>
+            <li>To play your chord loop, simply press 'Play' above the loop</li>
+            <li>You can mute the whole track, as well as the chords and drums, individually</li>
+            <li>While your loop is playing, use the keyboard to improvise and hone in melodies</li>
+            <li>To play the piano, use the corresponding keyboard keys</li>
+            <li>Music Shop allows up to 12 measures</li>
+          </ul>
+        </div>
+        <button class="button-left">i</button>
+        <div class="piano">
+          <div class="white-keys"></div>
+          <div class="black-keys"></div>
+        </div>
+        <div class="instructions-right">
+          <ul>Music Shop allows you to loop through chords and a drum beat so you can workshop melodies with the keyboard all on your computer - no instruments required
+            <li>When entering a chord, 'Duration' refers to the number of quarter notes that the chord will be played for</li>
+            <li>Each column on the drums represents one quarter note</li>
+            <li>You can add multiple drum measures at a time by pressing the 'Add Measure' button</li>
+            <li>'Clear Drums' will empty the queued up drum pattern</li>
+            <li>To play your chord loop, simply press 'Play' above the loop</li>
+            <li>You can mute the whole track, as well as the chords and drums, individually</li>
+            <li>While your loop is playing, use the keyboard to improvise and home in melodies</li>
+            <li>To play the piano, use the corresponding keyboard keys</li>
+            <li>Music Shop allows up to 12 measures per loop</li>
+          </ul>
+        </div>
+        <button class="button-right">i</button>
+      </div>
+    </div>
   </body>
 
 </html>

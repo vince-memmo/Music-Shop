@@ -1,5 +1,4 @@
 import * as Tone from 'tone' 
-console.log('kick working!') 
 import { Player } from 'tone';
 
 class Drums {
